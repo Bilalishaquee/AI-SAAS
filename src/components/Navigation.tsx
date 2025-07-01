@@ -29,36 +29,36 @@ const Navigation: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3 sm:py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-3 group">
+          <div className="flex items-center space-x-2 sm:space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 shadow-2xl shadow-cyan-500/25">
-                <Zap className="w-7 h-7 text-white" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-xl sm:rounded-2xl flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 shadow-2xl shadow-cyan-500/25">
+                <Zap className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-2xl blur-md opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-xl sm:rounded-2xl blur-md opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
             </div>
-            <div className="flex items-center space-x-2">
-              <span className={`text-2xl font-bold transition-colors duration-300 ${
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <span className={`text-lg sm:text-xl lg:text-2xl font-bold transition-colors duration-300 ${
                 scrolled 
                   ? 'bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 bg-clip-text text-transparent' 
                   : 'text-white'
               }`}>
                 AI SALES
               </span>
-              <Sparkles className={`w-5 h-5 transition-colors duration-300 ${
+              <Sparkles className={`w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-300 ${
                 scrolled ? 'text-cyan-500' : 'text-cyan-400'
               }`} />
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group">
                 <a
                   href={link.href}
-                  className={`flex items-center space-x-1 font-medium transition-colors duration-300 ${
+                  className={`flex items-center space-x-1 font-medium text-sm lg:text-base transition-colors duration-300 ${
                     scrolled 
                       ? 'text-gray-700 hover:text-cyan-600' 
                       : 'text-gray-300 hover:text-cyan-400'
@@ -66,7 +66,7 @@ const Navigation: React.FC = () => {
                 >
                   <span>{link.name}</span>
                   {link.hasDropdown && (
-                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
+                    <ChevronDown className="w-3 h-3 lg:w-4 lg:h-4 group-hover:rotate-180 transition-transform duration-300" />
                   )}
                 </a>
                 
@@ -77,7 +77,7 @@ const Navigation: React.FC = () => {
             
             <a
               href="#login"
-              className={`font-medium transition-colors duration-300 ${
+              className={`font-medium text-sm lg:text-base transition-colors duration-300 ${
                 scrolled 
                   ? 'text-gray-700 hover:text-purple-600' 
                   : 'text-gray-300 hover:text-purple-400'
@@ -86,10 +86,10 @@ const Navigation: React.FC = () => {
               Log in
             </a>
             
-            <button className="group relative bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold overflow-hidden transform hover:scale-105 transition-transform duration-300 shadow-xl shadow-cyan-500/20">
-              <span className="relative z-10 flex items-center space-x-2">
+            <button className="group relative bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg lg:rounded-xl font-semibold text-sm lg:text-base overflow-hidden transform hover:scale-105 transition-transform duration-300 shadow-xl shadow-cyan-500/20">
+              <span className="relative z-10 flex items-center space-x-1 lg:space-x-2">
                 <span>Get a Demo</span>
-                <Sparkles className="w-4 h-4 group-hover:rotate-45 transition-transform duration-300" />
+                <Sparkles className="w-3 h-3 lg:w-4 lg:h-4 group-hover:rotate-45 transition-transform duration-300" />
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
