@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Zap, Sparkles, ChevronDown } from 'lucide-react';
 
-const Navigation: React.FC = () => {
+interface NavigationProps {
+  onGetDemo?: () => void;
+}
+
+const Navigation: React.FC<NavigationProps> = ({ onGetDemo }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -86,7 +90,10 @@ const Navigation: React.FC = () => {
               Log in
             </a>
             
-            <button className="group relative bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg lg:rounded-xl font-semibold text-sm lg:text-base overflow-hidden transform hover:scale-105 transition-transform duration-300 shadow-xl shadow-cyan-500/20">
+            <button 
+              onClick={onGetDemo}
+              className="group relative bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg lg:rounded-xl font-semibold text-sm lg:text-base overflow-hidden transform hover:scale-105 transition-transform duration-300 shadow-xl shadow-cyan-500/20"
+            >
               <span className="relative z-10 flex items-center space-x-1 lg:space-x-2">
                 <span>Get a Demo</span>
                 <Sparkles className="w-3 h-3 lg:w-4 lg:h-4 group-hover:rotate-45 transition-transform duration-300" />
@@ -136,11 +143,6 @@ const Navigation: React.FC = () => {
             >
               Log in
             </a>
-            <div className="px-6">
-              <button className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold transition-transform duration-300 shadow-lg">
-                Get a Demo
-              </button>
-            </div>
           </div>
         </div>
       </div>
